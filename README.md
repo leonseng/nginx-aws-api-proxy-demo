@@ -4,6 +4,8 @@ This repository contains sample code for NGINX to proxy HTTP API calls to AWS se
 
 As AWS requires most requests to its HTTP APIs to be signed via the [Signature Version 4 (SigV4) signing process](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html), we will be using the [aws-sigv4-proxy](https://github.com/awslabs/aws-sigv4-proxy.git) to perform the request signing on our behalf.
 
+![Flow](./docs/images/flow.png)
+
 ## Prequisite
 
 - [Docker Compose V2](https://docs.docker.com/compose/cli-command/)
