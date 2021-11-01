@@ -1,0 +1,12 @@
+services:
+  aws-sigv4-proxy:
+    build: ./aws-sigv4-proxy
+    environment:
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+  nginx:
+    image: nginx
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./nginx/lambda-proxy.conf:/etc/nginx/conf.d/lambda-proxy.conf
