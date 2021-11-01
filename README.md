@@ -6,24 +6,20 @@ As AWS requires most requests to its HTTP APIs to be signed via the [Signature V
 
 ## Prequisite
 
-- docker-compose
+- [Docker Compose V2](https://docs.docker.com/compose/cli-command/)
 - AWS access key ID and secret access key to sign the API request
 
 ## Setup
 
-1. Create `.env` file containing the AWS credential variables:
-    ```
-    AWS_ACCESS_KEY_ID=<AWS access key ID>
-    AWS_SECRET_ACCESS_KEY=<AWS secret access key>
-    ```
-1. Clone the [aws-sigv4-proxy](https://github.com/awslabs/aws-sigv4-proxy.git) repository into the working directory
-    ```
-    git clone https://github.com/awslabs/aws-sigv4-proxy.git
-    ```
-
-Once the above have been setup, deploy the `NGINX` and `AWS SigV4 Proxy` containers using `docker-compose`
+Create `.env` file containing the AWS credential variables
 ```
-docker-compose up -d
+AWS_ACCESS_KEY_ID=<AWS access key ID>
+AWS_SECRET_ACCESS_KEY=<AWS secret access key>
+```
+
+Deploy the `NGINX` and `AWS SigV4 Proxy` containers using `Docker Compose V2`
+```
+docker compose up -d
 ```
 
 ## Demo
