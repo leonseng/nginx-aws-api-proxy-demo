@@ -1,6 +1,6 @@
 services:
   aws-sigv4-proxy:
-    build: ./aws-sigv4-proxy
+    build: https://github.com/awslabs/aws-sigv4-proxy.git
     environment:
       AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
       AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
