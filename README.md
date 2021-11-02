@@ -39,4 +39,4 @@ $ curl -H 'host: lambda.ap-southeast-2.amazonaws.com' \
 {"Answer:":"Jim is 33 years old!"}
 ```
 
-The `NGINX` configuration can be further extended so other AWS services as documented in [AWS SigV4 Proxy](https://github.com/awslabs/aws-sigv4-proxy/blob/master/README.md).
+The `NGINX` configuration can be further extended to other AWS services as documented in [AWS SigV4 Proxy](https://github.com/awslabs/aws-sigv4-proxy/blob/master/README.md).
