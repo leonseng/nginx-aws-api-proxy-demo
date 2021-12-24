@@ -6,7 +6,7 @@ As AWS requires most requests to its HTTP APIs to be signed via the [Signature V
 
 ![Flow](./docs/images/flow.png)
 
-## Prequisite
+## Prerequisite
 
 - [Docker Compose V2](https://docs.docker.com/compose/cli-command/)
 - AWS access key ID and secret access key to sign the API request
@@ -30,7 +30,7 @@ To demonstrate this proxying capability, I created an AWS Lambda function `lseng
 
 The `NGINX` instance is configured (see [lambda-proxy.conf](./nginx/lambda-proxy.conf)) to proxy any requests to `localhost:9090/lambda` via the `AWS SigV4 Proxy`, preserving the `Host` header (this is important as the `AWS SigV4 Proxy` uses the `Host` header value to route to the right AWS service/region).
 
-I then triggered the Lambda function through `NGINX` using Lambda's `Invoke API`[https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html]:
+I then triggered the Lambda function through `NGINX` using Lambda's [Invoke API](https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html):
 
 ```
 $ curl -H 'host: lambda.ap-southeast-2.amazonaws.com' \
